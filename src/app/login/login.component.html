@@ -1,0 +1,45 @@
+<div class="login-content flex-center">
+  <form class="login-form form-log">
+      <span class="login100-form-title" [@enter1]>
+						{{ title }}
+      </span>
+    <figure class="text-center figure-position">
+      <!--<img class="img-center" width="300" alt="Telma Logo" src="assets/images/pos_log.PNG" >-->
+    </figure>
+    <mat-form-field class="input-full-width" appearance="outline">
+      <mat-label class="padding-5">Identifiant</mat-label>
+      <mat-icon matPrefix class="icon-input">account_circle</mat-icon>
+      <input matInput
+             placeholder="Identifiant"
+             type="text"
+             name = "loginInput"
+             required
+             [(ngModel)] = "login.username"
+             #loginInput="ngModel">
+      <mat-error [hidden] = "loginInput.valid || loginInput.untouched" class="m-t-15 margin-l-14">
+        Identifiant <strong>obligatoire</strong>
+      </mat-error>
+
+    </mat-form-field>
+
+    <mat-form-field class="input-full-width margin-top-15" appearance="outline">
+      <mat-label class="padding-5">Mot de passe</mat-label>
+      <mat-icon matPrefix class="icon-input">vpn_key</mat-icon>
+      <input matInput
+             placeholder="Mot de passe"
+             [type]="hide ? 'password' : 'text'"
+             name = "password"
+             required
+             [(ngModel)] = "login.password"
+             #password="ngModel">
+      <mat-error [hidden] = "password.valid || password.untouched" class="m-t-15 margin-l-14">
+        Mot de passe <strong>obligatoire</strong>
+      </mat-error>
+      <mat-icon matSuffix class="margin-top-5">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+    </mat-form-field>
+    <div class="text-right input-full-width pb-2">
+      <!--<img *ngIf="loading" src="../assets/icons/loadtest.gif" class="loginImg"/>-->
+      <button mat-raised-button type="submit" class="button-right connect-btn">Connecter</button>
+    </div>
+  </form>
+</div>

@@ -17,7 +17,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { NotFoundComponent } from './not-found/not-found.component';
-import {MatExpansionModule, MatProgressSpinnerModule} from '@angular/material';
+import {MatExpansionModule, MatFormFieldModule, MatInputModule, MatLabel, MatProgressSpinnerModule} from '@angular/material';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {
   AtomSpinnerModule,
@@ -27,6 +27,9 @@ import {
 } from 'angular-epic-spinners';
 import {InjectTokenInterceptor} from './interceptors/inject-token-interceptor';
 import {LoaderService} from './service/loader.service';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {LoginModule} from './login/login.module';
+import {MaterialsModule} from './materials/materials.module';
 
 @NgModule({
   declarations: [
@@ -35,27 +38,31 @@ import {LoaderService} from './service/loader.service';
     NavComponent,
   ],
   imports: [
+    LoginModule,
     TypeProduitModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatGridListModule,
-    MatCardModule,
-    MatMenuModule,
-    MatIconModule,
-    MatButtonModule,
+    // MatGridListModule,
+    // MatCardModule,
+    // MatMenuModule,
+    // MatIconModule,
+    // MatButtonModule,
     LayoutModule,
-    MatToolbarModule,
-    MatSidenavModule,
-    MatListModule,
-    MatExpansionModule,
+    // MatToolbarModule,
+    // MatSidenavModule,
+    // MatListModule,
+    // MatExpansionModule,
+    // MatFormFieldModule,
+    // MatInputModule,
+    FormsModule,
+    ReactiveFormsModule,
     BrowserModule,
     HttpClientModule,
-    MatProgressSpinnerModule,
-    // FlowerSpinnerModule,
-    // FulfillingBouncingCircleSpinnerModule
-    // TrinityRingsSpinnerModule,
-    RadarSpinnerModule
+    // MatProgressSpinnerModule,
+    RadarSpinnerModule,
+    MaterialsModule
+
   ],
   providers: [
     {

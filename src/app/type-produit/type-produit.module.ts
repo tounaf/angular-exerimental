@@ -6,6 +6,7 @@ import { EditTypeProduitComponent } from './edit-type-produit/edit-type-produit.
 import { TypeProduitComponent } from './type-produit.component';
 import {RouterModule} from '@angular/router';
 import {NotFoundComponent} from '../not-found/not-found.component';
+import {MatGridListModule} from '@angular/material';
 
 
 
@@ -14,7 +15,8 @@ import {NotFoundComponent} from '../not-found/not-found.component';
   imports: [
     TypeProduitRouting,
     CommonModule,
-    RouterModule
+    RouterModule,
+    MatGridListModule
   ]
 })
 export class TypeProduitModule { }
