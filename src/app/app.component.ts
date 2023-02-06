@@ -19,7 +19,7 @@ export class AppComponent implements OnInit, AfterContentInit {
   ) {}
   showLoader: boolean;
   ngOnInit() {
-    this.httpClient.get('http://localhost:8000/api/sites').subscribe((resp) => {
+    this.httpClient.post('http://localhost:8000/login', {"username": "postest", "password": "postest"}).subscribe((resp) => {
       const data = resp;
       console.log(data);
     });
@@ -40,7 +40,7 @@ export class AppComponent implements OnInit, AfterContentInit {
     });
 
     this.loader.next.subscribe(value => {
-      console.log(value);
+      console.log('avlue ', value);
       this.showLoader = value;
       this.cdRef.detectChanges();
       console.log('SHOW LOADER ============>', this.showLoader);

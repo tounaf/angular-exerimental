@@ -32,6 +32,24 @@ export class HttpClientService {
 
   }
 
+  post(url, data, extraParams = []): Observable<any> {
+    this.loader.display(true);
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'content-type': 'application/json'
+      })
+    };
+    return this.httpClient.post<any>(url, data, httpOptions).pipe(
+      tap(_ => {
+        console.log('fetched heroes');
+        this.loader.display(false);
+      }),
+      catchError(this.handleError<any>('getHeroes', []))
+    );
+
+  }
+
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 
